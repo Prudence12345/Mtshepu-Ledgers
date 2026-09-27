@@ -1,0 +1,203 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<!-- 
+Developer: Prudence Lerato Mbele
+ * Copyright (c) 2026 P L Mbele. All Rights Reserved.
+ * Unauthorized copying of this file, via any medium, is strictly prohibited.
+ -->
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Free Consultation</title> 
+			<style> 
+			<!--Universal padding and border-->
+			        * {
+            box-sizing: border-box;
+        }
+			
+			body { 
+				font-family: Arial,
+				sans-serif; 
+				background-color: #f4f4f4;
+				margin: 0; 
+				padding: 0; 
+				} 
+
+				.form-container {
+				width: 400px; 
+				max-width: 100%; 
+				margin: 80px auto; 
+				padding: 30px; 
+				background-color: white; 
+				border-radius: 10px; 
+				box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+				} 
+ 
+				h2 {
+				text-align: center; 
+				color: #333; 
+				} 
+ 
+				label {
+				display: block;
+				margin-top: 15px;
+				margin-bottom: 5px; 
+				font-weight: bold; 
+				} 
+ 
+				input {
+				width: 100%; 
+				padding: 12px; 
+				box-sizing: border-box; 
+				border: 1px solid #ccc;
+				border-radius: 5px; 
+				}
+ 
+				input:focus {
+				border-color: #87CEFA;
+				outline: none; 
+				} 
+ 
+				button 
+				{ width: 100%; 
+				padding: 12px; 
+				margin-top: 20px; 
+				background-color: #87CEFA; 
+				border: none; 
+				border-radius: 5px; 
+				color: white; 
+				font-size: 16px; 
+				cursor: pointer; 
+				}
+ 
+				button:hover {
+				background-color: #5dade2; 
+				} 
+				<!--Nagivation Bar-->
+				nav a.active {
+				color: #00bfff;
+				border-bottom: 2px solid #00bfff;
+				}
+				
+				nav {
+				position: sticky;
+				top: 0;
+				background-color: #36454F;
+				padding: 5px 30px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				}
+				
+				nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				gap: 20px;
+				
+				flex: 1;
+				}
+				
+				nav a {
+				display: block;
+				font-size: 15px;
+				color: #2B547E;
+				text-decoration: none;
+				padding: 5px 10px;
+				}
+				
+				nav a:hover {
+				color: #0000FF;
+				background-color: #C0C0C0;
+				transition: color 0.4s ease, background-color 0.3s ease;
+				display: block;
+				padding: 4px 8px;
+				}
+				<!--NAV ON KEYS-->
+				nav a:focus {
+				outline: 2px solid #00bfff;
+				}
+				<!--MOBILE NAV BAR FIT-->
+				@media (max-width: 600px) {
+
+					nav {
+					flex-direction: column;
+					padding: 15px;
+					
+					}
+
+					nav ul {
+					flex-direction: column;
+					text-align: center;
+					width: 100%;
+					}
+					nav a {
+					width: 100%;
+					}
+				}
+					
+					
+				<!--Enable smooth scrolling only if the user hasn't requested reduced motion-->
+				@media (prefers-reduced-motion: no-preference) {
+					html {
+						scroll-behavior: smooth;
+						}
+				}
+				<!--Nav Logo-->
+				.logo {
+				display: flex;
+				align-items: center;
+				}
+
+				.logo img {
+				width: 70px;
+				height: 70px;
+				object-fit: contain;
+				display: block;
+				}
+
+
+			</style>
+	</head> 
+ <body> 
+ <nav >
+			<div class="logo" >
+         <img src="logo.png" alt="My Website Logo" >
+			</div>  
+		<ul>
+			<li><a href="Index.html" class="active">Home</a></li>
+			<li><a href="Services.html">Services</a></li>
+			<li><a href="Choose_us.html">Choose Us</a></li>
+			<li><a href="Consultation.html" >Contact</a></li>
+		</ul>
+	</nav>	
+										<div class="form-container">
+		<h2>Schedule a Free Consultation</h2> 
+			<form action="https://formsubmit.co/jaymtshepu@gmail.com" method="POST"> 
+				<!-- FULL NAME --> 
+				<label for="firstname">First Name</label>  
+					<input type="text" id="firstname" name="First Name" placeholder="Enter your first name" minlength="2" maxlength="50" pattern="[A-Za-zÀ-ÿ' -]+" oninput="this.value = this.value.replace(/[^A-Za-zÀ-ÿ' -]/g, '')" title="Please enter letters only." required >
+				<!--LAST NAME-->
+				<label for="lastname">Last Name</label> 
+					<input type="text" id="lastname" name="Last Name" placeholder="Enter your last name" minlength="2" maxlength="50" title="Please enter letters only." pattern="[A-Za-zÀ-ÿ' -]+" oninput="this.value = this.value.replace(/[^A-Za-zÀ-ÿ' -]/g, '')" title="Please enter letters only." required >
+				<!--PHONE NUMBER-->
+				<label for="phone">Phone Number:</label>
+					<input type="tel" id="phone" name="phone" placeholder="Enter your phone number" inputmode="numeric" pattern="0[0-9]{9}" title="Phone number must begin with '0'"  minlength="10" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+				<!--EMAIL-->
+				<label for="email">Email:</label>
+					<input type="email" id="email" name="email" placeholder="Enter your email address" required>
+					<!--CAPTCHA-->
+					<input type="hidden" name="_captcha" value="true">
+					<!--THANK YOU PAGE-->
+					<input type="hidden" name="_next" value="Thank_You.html">
+			<!--SUBMIT BUTTON-->
+		<button type="submit">Submit</button>
+		</form>
+
+										</div> 
+ </body> 
+</html>
